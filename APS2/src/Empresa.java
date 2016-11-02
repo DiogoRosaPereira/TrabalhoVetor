@@ -46,8 +46,6 @@ public class Empresa {
 		Projeto.setCompetencia(competencia);
 		
 		Projeto.cadastra();
-		
-		
 	}
 
 	private static void adicionarCompetencia(int index, String competencia) {
@@ -56,7 +54,6 @@ public class Empresa {
 		System.out.println("digite competencia");
 		competencia = n.nextLine();
 		Funcionario.novaCompetencia(index, competencia);
-		
 	}
 
 	private static void cadastra() {
