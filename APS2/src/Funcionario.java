@@ -1,23 +1,17 @@
-public class Funcionario {
+public class Funcionario extends Empresa {
 	
 	private static int numFunci = 0;
-	private static int [] funcionario = new int [5];
-	private static int valor;
-	private static int index;
-	private static String nome;
-	private static int salario;
-	private static String competencia;
-	
-	
-	public void cadastra() {
+	private static Funcionario [] funcionario = new Funcionario [5];
+
+	public static void cadastra() {
 		verificaEspaco();
-		funcionario[numFunci] = valor;
+		funcionario[numFunci] = valor1;
 		numFunci++;
 		}
 
-	private  void verificaEspaco() {
+	private static  void verificaEspaco() {
 		if (numFunci >= funcionario.length){
-			int [] novoVet = new int [funcionario.length*2];
+			Funcionario [] novoVet = new Funcionario [funcionario.length*2];
 			for(int i = 0; i<funcionario.length;i++ ){
 				novoVet[i] = funcionario[i];
 			}
@@ -26,47 +20,23 @@ public class Funcionario {
 	}
 
 	public static  void delete( ) {
-		verificaIndex(index);
+		verificaIndexFuncionario(index);
 		for (int i = index; i < numFunci-1; i++) {
 			funcionario[i] = funcionario[i+1];
 		}
 		numFunci--;
 	}
 
-	private static  void verificaIndex(int valor2) {
+	private static  void verificaIndexFuncionario(int index) {
 		if(index < 0 || index >= funcionario.length){
 			throw new ArrayIndexOutOfBoundsException(index);
 		} 
 	}
 
-	public static void novaCompetencia(int index, String competencia) {
-		verificaIndex(index);
-		funcionario[index] = competencia;
+	public static void novaCompetencia(int index, Funcionario competencia1) {
+		verificaIndexFuncionario(index);
+		funcionario[index] = competencia1;
 		
 	}
-	
-	public static String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		Funcionario.nome = nome;
-	}
-
-	public static int getSalario() {
-		return salario;
-	}
-
-	public void setSalario(int salario) {
-		Funcionario.salario = salario;
-	}
-
-	public static String getCompetencia() {
-		return competencia;
-	}
-
-	public void setCompetencia(String competencia) {
-		Funcionario.competencia = competencia;
-	}
-	
 }
+	

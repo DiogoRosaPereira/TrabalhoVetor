@@ -1,54 +1,54 @@
 import java.util.Scanner;
 
 public class Empresa {
-	private static final String dataFim = null;
-
 	static Scanner n = new Scanner(System.in);
+	private static int ind = 0;
+
+	protected static Funcionario []funcionario = new Funcionario[4];
+	protected static Funcionario valor1;
+	private static Funcionario competencia1;
 	
-	private static String competencia;
-	private static int salario;
-	private static String nome;
+	private static Projeto []projeto  = new Projeto[4];
+	protected static Projeto valor2;
 	
-	private static int index;
-
-	static Funcionario func = new Funcionario ();
-	static Projeto proj = new Projeto ();
-
-	private static String nomeProj;
-
-	private static String dataInicio;
+	
 		
 	public static void main(String[] args) {
-		
-		
 		
 		// FUNCIONARIO
 		cadastra();  
 		Funcionario.delete();
-		adicionarCompetencia(index, competencia);
+		adicionarCompetencia(index, competencia1);
 		
 		//PROJETOS
 		criarProjeto();
 		Projeto.delete();
 		Projeto.consulta();
-		
+		Projeto.addFuncionarioProjeto(index, Funcionario);
 		
 	}
 
 	private static void criarProjeto() {
 		System.out.println("nome do projeto");
-		proj.setNomeProj(nomeProj);
+		Projeto nomeProjeto = n.nextLine();
+		projeto[ind] = nomeProjeto;
 		System.out.println("data inicio ");
-		Projeto.setDataInicio(dataInicio);
+		String dataInicio = n.nextLine();
+		projeto[ind] = dataInicio;
 		System.out.println("data fim ");
-		Projeto.setDataFim(dataFim);
+		String dataFim = n.nextLine();
+		projeto[ind] = dataFim;
 		System.out.println("Competencias necessarias ");
-		Projeto.setCompetencia(competencia);
+		String competencias = n.nextLine();
+		projeto[ind] =	competencias;
 		
+		valor2 = projeto[ind];
 		Projeto.cadastra();
+		
+		ind++;
 	}
 
-	private static void adicionarCompetencia(int index, String competencia) {
+	private static void adicionarCompetencia(int index, Funcionario competencia) {
 		System.out.println("digite nome funci");
 		index = n.nextInt();
 		System.out.println("digite competencia");
@@ -58,13 +58,18 @@ public class Empresa {
 
 	private static void cadastra() {
 		System.out.println("nome funcionario");
-		func.setNome(nome);
+		String nomeFuncionario = n.nextLine();
+		funcionario[ind] = nomeFuncionario;
 		System.out.println("salario");
-		func.setSalario(salario);
+		double salario = n.nextDouble();
+		funcionario[ind] = salario;
 		System.out.println("competencia");
-		func.setCompetencia(competencia);
-		//func = nome, salario, competencia;
-		func.cadastra();
+		String competencia = n.nextLine();
+		funcionario[ind] = competencia;
+		valor1 = funcionario[ind];
+		
+		Funcionario.cadastra();
+		ind++;
 	}
 
 }
