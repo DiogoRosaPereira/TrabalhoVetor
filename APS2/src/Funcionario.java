@@ -1,42 +1,39 @@
-public class Funcionario extends Empresa {
+public class Funcionario {
 	
-	private static int numFunci = 0;
-	private static Funcionario [] funcionario = new Funcionario [5];
+	private  String nome;
+	private  double salario;
+	private static String []Competencia = new String[4];
 
-	public static void cadastra() {
-		verificaEspaco();
-		funcionario[numFunci] = valor1;
-		numFunci++;
-		}
+	
+	private static int ind = 0 ;
 
-	private static  void verificaEspaco() {
-		if (numFunci >= funcionario.length){
-			Funcionario [] novoVet = new Funcionario [funcionario.length*2];
-			for(int i = 0; i<funcionario.length;i++ ){
-				novoVet[i] = funcionario[i];
-			}
-			funcionario = novoVet;
-		}
+
+	public String[] getCompetencia() {
+		return Competencia;
 	}
-
-	public static  void delete( ) {
-		verificaIndexFuncionario(index);
-		for (int i = index; i < numFunci-1; i++) {
-			funcionario[i] = funcionario[i+1];
-		}
-		numFunci--;
+	public void setCompetencia(String compFunc) {
+		Competencia[ind] = compFunc;
+		ind++;
 	}
-
-	private static  void verificaIndexFuncionario(int index) {
-		if(index < 0 || index >= funcionario.length){
-			throw new ArrayIndexOutOfBoundsException(index);
-		} 
+	public String getNome() {
+		return nome;
 	}
-
-	public static void novaCompetencia(int index, Funcionario competencia1) {
-		verificaIndexFuncionario(index);
-		funcionario[index] = competencia1;
-		
+	public  void setNome(String nomeFunc) {
+		nome = nomeFunc;
 	}
+	public double getSalario() {
+		return salario;
+	}
+	public  void setSalario(double salarioFunc) {
+		salario = salarioFunc;
+	}
+	public String toString(){
+		return "nome  "+getNome()+
+				"\nSalario  "+getSalario()+
+				"\nCompetencia  "+getCompetencia();
+	}
+	
+	
 }
+
 	

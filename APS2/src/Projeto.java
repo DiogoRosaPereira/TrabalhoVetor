@@ -1,52 +1,60 @@
-public class Projeto extends Empresa {
+import java.time.LocalDate;
 
-	private static int NumProjetos;
-	private static Projeto [] projetos = new Projeto[5];
+public class Projeto {
+	
+	private String nome;
+	private LocalDate dataInicio;
+	private LocalDate dataFim;
+	private String competencia;
+	private LocalDate date;
+	private LocalDate date1;
 	
 	
-	static void cadastra() {
-		verificaEspaco();
-		projetos[NumProjetos] = valor2;
-		NumProjetos++;
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public LocalDate getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(LocalDate date) {
+		dataInicio = date;
+	}
+	public LocalDate getDataFim() {
+		return dataFim;
+	}
+	public void setDataFim(LocalDate date1) {
+		dataFim = date1;
+	}
+	public String getCompetencias() {
+		return competencia;
+	}
+	public void setCompetencia(String competenciaProj) {
+		competencia = competenciaProj;
 	}
 	
-	private static void verificaEspaco() {
-		if (NumProjetos >= projetos.length){
-			Projeto [] novoVet = new Projeto [projetos.length*2];
-			for(int i = 0; i<projetos.length;i++ ){
-				novoVet[i] = projetos[i];
-			}
-			projetos = novoVet;
-		}
-		
+	
+	public String toString(){
+		return "nome  "+getNome()+
+				"\ndata de inicio  "+getDataInicio()+
+				"\ndata final  "+getDataFim()+
+				"\nCompetencias  "+getCompetencias();
 	}
+	
+	
 
-	public static void delete() {
-		verificaIndexProjeto(index);
-		for (int i = index; i < NumProjetos-1; i++) {
-			projetos[i] = projetos[i+1];
-		}
-		NumProjetos--;		
-	}
 
-	private static void verificaIndexProjeto() {
-		if(index < 0 || index >= projetos.length){
-			throw new ArrayIndexOutOfBoundsException(index);
-		} 
-	}
 
-	public static int consulta() {
-		return NumProjetos;
-
-	}
-
-	public static void addFuncionarioProjeto() {
-		verificaIndexProjeto();
-		projetos[index] = funcionario;
-		
-		
-	}
 }
 
 
