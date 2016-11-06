@@ -9,15 +9,6 @@ public class Projeto {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public String getNome() {
 		return nome;
 	}

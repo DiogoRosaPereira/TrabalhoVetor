@@ -17,25 +17,54 @@ public class Empresa {
 	private static int valor;
 	
 	public static void main(String[] args) {
-		
-		menu();
+		cadastrarProjeto();
+		//menu();
 		
 		
 	}
 	private static void menu(){
-		if(opcao == false){
+		
+			/*int O =0;
+			System.out.println("digite o numero da opcao");
+			O = n.nextInt();
+			if(O  == 1){
+			consultarProjetosAtivos();}*/
+			//removerProjetos();
 			//cadastraFuncionario();
-			//excluirFuncionario();
-			addCompetencia();
+			//removerFuncionario();
+			//addCompetencia();
 			//PROJETOS
-			//cadastrarProjeto();
-		}
+			//if(O  == 2){
+			cadastrarProjeto();//}
+		
 		
 	}
 
+	private static void consultarProjetosAtivos() {
+		for(int i =0 ; i < projeto.length ; i++){
+			System.out.println(i+" = "+projeto[i]);
+		}
+		
+	}
+	private static void removerProjetos() {
+		
+		System.out.println("digite o numero do Projeto: ");
+		valor = n.nextInt();
+		if (valor <= NumeroProjeto && valor > 0 ) {
+			int laco = NumeroProjeto - valor;
+			for(int i=0; i<laco; i++ ){
+				projeto[valor] = projeto[valor+1];
+				menu();
+			}
+		}else{
+			System.out.println("Favor insirir funcionario valido. ");
+			menu();
+		}
+		
+	}
 	private static void cadastrarProjeto() {
 		testaVetorProjetos();
-		System.out.println("nome do projeto:");
+		System.out.print("nome do projeto:");
 		String nome = n.nextLine();
 		proj.setNome(nome);
 		
@@ -113,10 +142,10 @@ public class Empresa {
 		menu();
 	}
 
-	private static void excluirFuncionario() {
+	private static void removerFuncionario() {
 		System.out.println("digite o numero do funcionario: ");
 		valor = n.nextInt();
-		if (valor <= NumeroFunc ) {
+		if (valor <= NumeroFunc && valor > 0 ) {
 			int laco = NumeroFunc - valor;
 			for(int i=0; i<laco; i++ ){
 				funcionario[valor] = funcionario[valor+1];
@@ -133,12 +162,12 @@ public class Empresa {
 		System.out.println("Nome funcionario. ");
 		String nomeFunc = n.nextLine();
 		empregado.setNome(nomeFunc);
+		
 		System.out.println("salario do funcionario. ");
 		double salarioFunc = n.nextDouble();
 		empregado.setSalario(salarioFunc);
-		System.out.println("competencia");
-		String compFunc = n.next();
-		empregado.setCompetencia(compFunc);
+		
+		// Fazer metodo recebendo competencia..
 		
 		funcionario[NumeroFunc] = empregado ;
 		NumeroFunc++;
