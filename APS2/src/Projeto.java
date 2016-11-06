@@ -3,11 +3,11 @@ import java.time.LocalDate;
 public class Projeto {
 	
 	private String nome;
-	private LocalDate dataInicio;
+	private static LocalDate dataInicio;
 	private LocalDate dataFim;
 	private String competencia;
-	private LocalDate date;
-	private LocalDate date1;
+	
+	
 	
 	
 	
@@ -24,7 +24,7 @@ public class Projeto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public LocalDate getDataInicio() {
+	public static LocalDate getDataInicio() {
 		return dataInicio;
 	}
 	public void setDataInicio(LocalDate date) {
