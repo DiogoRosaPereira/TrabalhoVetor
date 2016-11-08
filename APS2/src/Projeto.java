@@ -6,7 +6,7 @@ public class Projeto {
 	private static LocalDate dataInicio;
 	private LocalDate dataFim;
 	private String []competencia = new String[4];
-	private static int ind =0;
+	private int ind =0;
 	
 	
 	public String getNome() {

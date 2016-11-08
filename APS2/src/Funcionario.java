@@ -5,16 +5,16 @@ public class Funcionario {
 	private String []competencia = new String[4];
 	
 	
-	private static int ind = 0 ;
+	private int ind = 0 ;
 
 
-	public String getCompetencia() {
+	public String getListaCompetencias() {
 		String func = "";
 		for (int i = 0; i < competencia.length; i++) {
 			if(competencia[i] != null)
 				func += competencia[i]+", ";
 		}
-		return func+" - "+ind+" - "+competencia.length;
+		return func;
 	}
 	
 	public void setCompetencia(String compFunc) {
@@ -51,7 +51,7 @@ public class Funcionario {
 	public String toString(){
 		return "nome  "+getNome()+
 				"\nSalario  "+getSalario()+
-				"\nCompetencia  "+getCompetencia();
+				"\nCompetencia  "+getListaCompetencias();
 	}
 	
 	
