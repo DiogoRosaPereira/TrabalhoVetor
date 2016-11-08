@@ -24,18 +24,13 @@ public class Empresa {
 	}
 	private static void menu(){
 		
-			/*int O =0;
-			System.out.println("digite o numero da opcao");
-			O = n.nextInt();
-			if(O  == 1){
-			consultarProjetosAtivos();}*/
+			//consultarProjetosAtivos();
 			//removerProjetos();
 			//cadastraFuncionario();
 			//removerFuncionario();
 			//addCompetencia();
 			//PROJETOS
-			//if(O  == 2){
-			cadastrarProjeto();//}
+			//cadastrarProjeto();
 		
 		
 	}
