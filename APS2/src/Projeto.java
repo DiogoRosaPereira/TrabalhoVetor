@@ -5,8 +5,8 @@ public class Projeto {
 	private String nome;
 	private static LocalDate dataInicio;
 	private LocalDate dataFim;
-	private String competencia;
-	
+	private String []competencia = new String[4];
+	private static int ind =0;
 	
 	
 	public String getNome() {
@@ -28,13 +28,29 @@ public class Projeto {
 		dataFim = date1;
 	}
 	public String getCompetencias() {
-		return competencia;
+		String comp = "";
+		for (int i = 0; i < competencia.length; i++) {
+			if(competencia[i] != null)
+				comp += competencia[i]+", ";
+		}
+		return comp;
 	}
 	public void setCompetencia(String competenciaProj) {
-		competencia = competenciaProj;
+		testavetorCompetencia();
+		competencia[ind] = competenciaProj;
+		ind++;
 	}
 	
 	
+	private void testavetorCompetencia() {
+		if(ind >= competencia.length-1){
+		String [] vetNovo = new String [competencia.length+4];
+		for(int i = 0; i<competencia.length;i++ ){
+			vetNovo[i] = competencia[i];
+			}
+		competencia = vetNovo;
+		}
+	}
 	public String toString(){
 		return "nome  "+getNome()+
 				"\ndata de inicio  "+getDataInicio()+
